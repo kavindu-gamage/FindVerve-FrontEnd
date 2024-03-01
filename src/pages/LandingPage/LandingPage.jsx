@@ -1,9 +1,10 @@
-import NavBar from '../../components/organisms/NavBar/NavBar'
+import NavBar from "../../components/organisms/NavBar/NavBar";
 
 export default function LandingPage() {
   return (
     <div>
         <NavBar/>
-    </div>
+        <h1>Kavindu</h1>
+    </div>    
   )
 }
