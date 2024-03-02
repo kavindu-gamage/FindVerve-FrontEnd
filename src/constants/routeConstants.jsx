@@ -1,3 +1,5 @@
 export const ROUTES = {
-    LANDING : "/"
+    HOME : "/",
+    JOBS:"/all-jobs",
+    COMPANIES:"/companies",
 };

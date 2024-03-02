@@ -1,20 +1,33 @@
+import { theme } from "../../../theme/Theme";
+
 export const logoStyle = {
-  display: { xs: "none", md: "flex" },
+  display: {
+    xs: "none",
+    md: "flex",
+  },
   width: "10%",
   height: "auto",
 };
 
 export const navBarStyle = {
-  color: "primary.main",
+  color: theme.palette.primary.main,
 };
 
 export const navButtonStyle = {
   textTransform: "none",
-  color: "primary.light",
+  color: theme.palette.primary.light,
   backgroundColor: "transparent",
   fontWeight: "bold",
   fontSize: 15,
   "&:hover": {
-    color: "secondary.main",
+    color: theme.palette.secondary.main,
+  },
+};
+
+export const menuIconsStyle = {
+  flexGrow: 1,
+  display: {
+    xs: "none",
+    md: "flex",
   },
 };
