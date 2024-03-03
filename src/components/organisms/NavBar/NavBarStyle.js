@@ -1,11 +1,7 @@
 import { theme } from "../../../theme/Theme";
 
 export const logoStyle = {
-  display: {
-    xs: "none",
-    md: "flex",
-  },
-  width: "10%",
+  width: "35%",
   height: "auto",
 };
 
@@ -17,17 +13,40 @@ export const navButtonStyle = {
   textTransform: "none",
   color: theme.palette.primary.light,
   backgroundColor: "transparent",
-  fontWeight: "bold",
+  fontWeight: 500,
   fontSize: 15,
   "&:hover": {
     color: theme.palette.secondary.main,
   },
 };
 
-export const menuIconsStyle = {
+export const navMenuStyle = {
   flexGrow: 1,
   display: {
     xs: "none",
     md: "flex",
   },
+};
+
+export const navSideMenuStyle = {
+  flexGrow: 1,
+  display: {
+    xs: "flex",
+    md: "none",
+  },
+};
+
+export const lBoxStyle = {
+  display: {
+    xs: "none",
+    md: "flex",
+  },
+  mr: -27,
+};
+export const mBoxStyle = {
+  display: {
+    xs: "flex",
+    md: "none",
+  },
+  mr: 1,
 };
