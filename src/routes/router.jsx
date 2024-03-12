@@ -3,6 +3,7 @@ import { ROUTES } from "../constants/routeConstants";
 import AllJobs from "../pages/AllJobs/AllJobs";
 import Companies from "../pages/Companies/Companies";
 import HomePage from "../pages/Home/HomePage";
+import LoginPage from "../pages/Login/LoginPage";
 
 const router = createBrowserRouter([
     {
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
     {
         path: ROUTES.COMPANIES,
         element : <Companies/>
+    },
+    {
+        path : ROUTES.LOGIN,
+        element:<LoginPage/>
     },
 ]);
 export default router;
