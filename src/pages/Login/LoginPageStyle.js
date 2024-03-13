@@ -1,14 +1,15 @@
 export const mainStyles = {
   display: "flex",
-  width: "auto",
+  width: "100vw",
   height: "100vh",
   justifyContent: "center",
   alignItems: "center",
+  backgroundColor: "primary.main",
 };
 
 export const mainGridStyles = {
   height: "100%",
-  p: 3,
+
 };
 
 export const leftGridStyles = {
@@ -29,4 +30,12 @@ export const rightGridStyles = {
     xs: 2,
     md: 0,
   },
+};
+
+export const mainHeader = {
+  fontWeight: 600,
+  fontSize: 40,
+  color: "info.main",
+  textAlign: "center",
+  py: 5,
 };

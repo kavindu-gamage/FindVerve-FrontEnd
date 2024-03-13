@@ -1,6 +1,5 @@
 export const boxStyle = {
     flexGrow: 1,
-    borderRadius: 3,
     height: "100%",
     backgroundColor: "secondary.main",
     display: "flex",
@@ -9,7 +8,7 @@ export const boxStyle = {
 };
 
 export const coverImageStyle = {
-    width: "60%",
+    width: "70%",
     height: "auto",
     alignSelf: "center",
 };
