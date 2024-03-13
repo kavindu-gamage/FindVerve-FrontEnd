@@ -1,10 +1,25 @@
-import { Box, TextField } from "@mui/material";
+import { Box, Button, TextField } from "@mui/material";
 import { useFormik } from "formik";
 import * as yup from "yup";
-import { formBodyStyle, loginInputStyle } from "./LoginViewStyle";
+import { formBodyStyle, loginButtonStyle, loginInputStyle } from "./LoginViewStyle";
 
 export default function LoginView() {
 
+  interface RootState {
+    auth: {
+      isAuthenticated: boolean;
+      isLoading: boolean;
+      error: string;
+    };
+  }
+
+  //const { isAuthenticated, isLoading, error } = useSelector((state: RootState) => state.auth);
+  const dispatch: AppDispatch = useDispatch();
+
+  const handleCustomSubmit = async (data) => {
+    // console.log(data);
+    dispatch(userLogin(data));
+  };
 
   const validationSchema = yup.object({
     email: yup.string().required("Email is required"),
@@ -23,9 +38,9 @@ export default function LoginView() {
     // onSubmit: (values) => {
     //   alert(JSON.stringify(values, null, 2));
     // },
-    // onSubmit: (values) => {
-    //   handleCustomSubmit(values);
-    // },
+    onSubmit: (values) => {
+      handleCustomSubmit(values);
+    },
   });
   console.log("abc", formik.values);
   return (
@@ -64,7 +79,7 @@ export default function LoginView() {
           fullWidth
         />
         <Box width="100%">
-          
+          <Button fullWidth type= "submit" sx={loginButtonStyle} >Sign in</Button>
         </Box>
       </form>
     </Box>
