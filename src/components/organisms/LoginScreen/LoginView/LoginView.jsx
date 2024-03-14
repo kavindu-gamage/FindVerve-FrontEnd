@@ -1,20 +1,14 @@
 import { Box, Button, TextField } from "@mui/material";
 import { useFormik } from "formik";
+import { useDispatch } from "react-redux";
 import * as yup from "yup";
+import { userLogin } from "../../../../redux/actions/authAction";
 import { formBodyStyle, loginButtonStyle, loginInputStyle } from "./LoginViewStyle";
 
 export default function LoginView() {
 
-  interface RootState {
-    auth: {
-      isAuthenticated: boolean;
-      isLoading: boolean;
-      error: string;
-    };
-  }
-
   //const { isAuthenticated, isLoading, error } = useSelector((state: RootState) => state.auth);
-  const dispatch: AppDispatch = useDispatch();
+  const dispatch = useDispatch();
 
   const handleCustomSubmit = async (data) => {
     // console.log(data);
