@@ -3,10 +3,13 @@ import { useFormik } from "formik";
 import { useDispatch } from "react-redux";
 import * as yup from "yup";
 import { userLogin } from "../../../../redux/actions/authAction";
-import { formBodyStyle, loginButtonStyle, loginInputStyle } from "./LoginViewStyle";
+import {
+  formBodyStyle,
+  loginButtonStyle,
+  loginInputStyle,
+} from "./LoginViewStyle";
 
 export default function LoginView() {
-
   //const { isAuthenticated, isLoading, error } = useSelector((state: RootState) => state.auth);
   const dispatch = useDispatch();
 
@@ -73,7 +76,9 @@ export default function LoginView() {
           fullWidth
         />
         <Box width="100%">
-          <Button fullWidth type= "submit" sx={loginButtonStyle} >Sign in</Button>
+          <Button fullWidth type="submit" sx={loginButtonStyle}>
+            Sign in
+          </Button>
         </Box>
       </form>
     </Box>

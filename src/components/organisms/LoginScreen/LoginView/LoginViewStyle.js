@@ -20,9 +20,8 @@ export const loginInputStyle = {
     opacity: 1.5,
   },
   "& .MuiInputLabel-root": {
-    fontSize:18,
+    fontSize: 18,
     color: "info.main",
-
   },
 
   pb: 2,
