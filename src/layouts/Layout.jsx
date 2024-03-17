@@ -1,11 +1,10 @@
 import NavBar from "../components/organisms/NavBar/NavBar";
 
-export const Layout = () => {
+export const Layout = ({children}) => {
   return (
     <div>
-      <div>
-        <NavBar />
-      </div>
+      <NavBar />
+      <main>{children}</main>
     </div>
   );
 };
