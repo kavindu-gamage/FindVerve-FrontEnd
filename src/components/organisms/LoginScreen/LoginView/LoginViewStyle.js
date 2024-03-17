@@ -8,12 +8,13 @@ export const loginInputStyle = {
   //width:"400px",
   ["& fieldset"]: {
     borderRadius: 2,
-    borderColor: "secondary.main",
+
   },
   "& input": {
     textAlign: "left",
     fontSize: 16,
-    height: "2.5rem",
+    height: "2.3rem",
+    outline: "none",
   },
   ["& :: placeholder"]: {
     color: "primary.light",
