@@ -8,7 +8,7 @@ import {
   cancelButtonStyle,
   saveButtonStyle,
   subStyles,
-  titleStyle,
+  titleStyle
 } from "./MainSectionStyles";
 
 export default function MainSection() {
