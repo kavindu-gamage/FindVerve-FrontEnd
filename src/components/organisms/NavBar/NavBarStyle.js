@@ -7,6 +7,7 @@ export const logoStyle = {
 
 export const navBarStyle = {
   color: theme.palette.primary.main,
+  boxShadow: "none",
 };
 
 export const navButtonStyle = {
