@@ -1,7 +1,7 @@
-import { Stack, Typography } from "@mui/material";
+import { Box, Stack, Typography } from "@mui/material";
 import MenuItem from "@mui/material/MenuItem";
 import { useNavigate } from "react-router-dom";
-import { leftMenuStyle, textStyle } from "./MenuListStyles";
+import { frameStyle, leftMenuStyle, textStyle, titleStyle } from "./MenuListStyles";
 
 export default function MenuList() {
   const navigate = useNavigate();
@@ -14,7 +14,7 @@ export default function MenuList() {
   ];
   
   return (
-    <Stack direction="row">
+    <Stack direction="row" >
         <Stack spacing={2}>
           {menuButtons.map((button, index) => (
             <MenuItem key={index} onClick={() => navigate(button.path)} sx={leftMenuStyle} >
@@ -22,13 +22,13 @@ export default function MenuList() {
             </MenuItem>
           ))}
         </Stack>
-        <Stack>
-        <div id="general">
-          <Typography variant="h4">General Information</Typography>
-          {/* Add details content for "General Information" here */}
-        </div>
+        <Stack spacing={2}>
+        <Box id="general" sx={frameStyle}>
+          <Typography sx={titleStyle}>General Information</Typography>
+          
+        </Box>
         <div id="about">
-          <Typography variant="h4">About</Typography>
+          <Typography sx={titleStyle}>About</Typography>
           {/* Add details content for "About" here */}
         </div>
         </Stack>
