@@ -7,16 +7,21 @@ export const textStyle = {
 
 export const titleStyle = {
   color: "info.main",
-  fontSize: 25,
+  fontSize: "2rem",
   fontWeight: 530,
   textTransform: "uppercase",
 };
+
+export const subTitleStyle = {
+  color: "info.main",
+  fontSize: "1rem",
+}
 
 export const frameStyle = {
     width:"100vh",
     height:"auto",
     padding:"1rem",
     border: `1px solid`,
-    borderColor: "primary.dark", // Set the border color
+    borderColor: "primary.dark",
  
 };

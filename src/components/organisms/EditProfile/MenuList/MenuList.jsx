@@ -1,7 +1,7 @@
 import { Box, Stack, Typography } from "@mui/material";
 import MenuItem from "@mui/material/MenuItem";
 import { useNavigate } from "react-router-dom";
-import { frameStyle, leftMenuStyle, textStyle, titleStyle } from "./MenuListStyles";
+import { frameStyle, leftMenuStyle, subTitleStyle, textStyle, titleStyle } from "./MenuListStyles";
 
 export default function MenuList() {
   const navigate = useNavigate();
@@ -25,7 +25,10 @@ export default function MenuList() {
         <Stack spacing={2}>
         <Box id="general" sx={frameStyle}>
           <Typography sx={titleStyle}>General Information</Typography>
-          
+          <Typography sx={subTitleStyle}>Avatar</Typography>
+          <stack>
+            
+          </stack>
         </Box>
         <div id="about">
           <Typography sx={titleStyle}>About</Typography>
