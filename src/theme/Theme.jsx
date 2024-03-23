@@ -10,6 +10,9 @@ export const theme = createTheme({
     secondary: {
       main: "#0EA89B",
       light: "#0ACFBF",
+      dark:"#C8FBF6",
+      hover:"#C0F2ED"
+      
     },
     info: {
       main: "#171A1F",
