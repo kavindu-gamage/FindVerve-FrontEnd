@@ -19,7 +19,7 @@ export const mainSectionStyles = {
   justifyContent: "space-between",
   alignItems: "flex-start",
   width: "100%",
-  paddingBottom:"3rem"
+  paddingBottom: "3rem",
   // marginLeft: "10%",
   // marginRight: "10%",
 };
@@ -30,7 +30,7 @@ export const arrowStyle = {
 
 export const mainTitleStyle = {
   color: "info.main",
-  fontWeight:"bold"
+  fontWeight: "bold",
 };
 
 export const cancelButtonStyle = {
@@ -63,15 +63,15 @@ export const textStyle = {
 export const titleStyle = {
   color: "info.main",
   fontSize: "1.2rem",
-  fontWeight: 540,
+  fontWeight: 550,
   textTransform: "uppercase",
 };
 
 export const subTitleStyle = {
   color: "info.main",
   fontSize: "1rem",
-  fontWeight: 540,
-  marginTop:"1.5rem"
+  fontWeight: 550,
+  marginTop: "1.5rem",
 };
 
 export const frameStyle = {
@@ -84,15 +84,15 @@ export const frameStyle = {
 
 export const changeButtonStyle = {
   backgroundColor: "secondary.dark",
-    color: "secondary.main",
-    textTransform: "none",
-    "&:hover": {
-      backgroundColor: "secondary.hover",
-    },
-    "&:focus": {
-      outline: "none",
-      shadow:"none"
-    },
+  color: "secondary.main",
+  textTransform: "none",
+  "&:hover": {
+    backgroundColor: "secondary.hover",
+  },
+  "&:focus": {
+    outline: "none",
+    shadow: "none",
+  },
 };
 
 export const removeButtonStyle = {
@@ -108,17 +108,45 @@ export const removeButtonStyle = {
 export const pImageStyle = {
   width: "12%",
   height: "auto",
-  borderRadius:"50%"
-}
+  borderRadius: "50%",
+};
 
 export const imageBoxStyle = {
-  display:"flex",
+  display: "flex",
   alignItems: "center",
-  padding:"1rem",
-  gap:"2rem"
+  padding: "1rem",
+  gap: "2rem",
+};
 
-}
+export const textInputStyle = {
+  width: "20rem",
+  ["& fieldset"]: {
+    borderRadius: 4,
+    borderColor: "secondary.main",
+  },
+  "& input": {
+    textAlign: "left",
+    fontSize: 16,
+    height: "0.4rem",
+  },
 
+  pt: 1,
+};
 
+export const skillBoxStyle = {
+  borderRadius:"5px",
+  backgroundColor: "secondary.main",
+  color: "primary.main",
+  textTransform: "none",
+  "&:hover": {
+    backgroundColor: "secondary.light",
+  },
+  "&:focus": {
+    outline: "none",
+  },
+  height: "2.3rem",
+};
 
-
+export const deleteSkillButtonStyle = {
+  marginLeft: "8px",
+};
