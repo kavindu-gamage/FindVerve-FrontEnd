@@ -1,21 +1,23 @@
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import SaveIcon from "@mui/icons-material/Save";
-import { Box, Button, Stack, Typography } from "@mui/material";
+import { Box, Button, Grid, Stack, Typography } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 import MenuItem from "@mui/material/MenuItem";
 import TextField from "@mui/material/TextField";
-import PropTypes from 'prop-types';
-import { useState } from 'react';
+import PropTypes from "prop-types";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import profile1 from "../../assets/images/profiles/profile1.png";
 import { Layout } from "../../layouts/Layout";
 import {
+  addSkillButtonStyle,
   arrowStyle,
   cancelButtonStyle,
   changeButtonStyle,
   deleteSkillButtonStyle,
   frameStyle,
   imageBoxStyle,
+  infoSectionStyles,
   leftMenuStyle,
   mainSectionStyles,
   mainStyles,
@@ -23,12 +25,13 @@ import {
   pImageStyle,
   removeButtonStyle,
   saveButtonStyle,
+  skillAddTextInputStyle,
   skillBoxStyle,
   subStyles,
   subTitleStyle,
   textInputStyle,
   textStyle,
-  titleStyle
+  titleStyle,
 } from "./EditProfileStyles";
 
 export default function EditProfile() {
@@ -43,33 +46,37 @@ export default function EditProfile() {
   const [skills, setSkills] = useState([]);
 
   const handleAddSkill = (newSkill) => {
-    if(skills.length<5 && !skills.includes(newSkill)){
-      setSkills([...skills, newSkill])
+    if (skills.length < 5 && !skills.includes(newSkill)) {
+      setSkills([...skills, newSkill]);
     }
-  }
+  };
 
-  const handleDeleteSkill = (skillToDelete) =>{
+  const handleDeleteSkill = (skillToDelete) => {
     setSkills(skills.filter((skill) => skill != skillToDelete));
-  }
+  };
 
   const AddSkillsForm = ({ onAdd }) => {
-    const [skill, setSkill] = useState('');
-  
+    const [skill, setSkill] = useState("");
+
     const handleAddSkill = () => {
       onAdd(skill);
-      setSkill('');
+      setSkill("");
     };
-  
+
     return (
       <Stack direction="row" spacing={1} alignItems="center">
         <TextField
-          label="Skill"
+          label="Add your Skills"
           value={skill}
           onChange={(e) => setSkill(e.target.value)}
-          sx={{ width: '200px' }}
+          sx={skillAddTextInputStyle}
         />
-        <Button onClick={handleAddSkill} disabled={!skill.trim() || skill.length > 30}>
-          Add
+        <Button
+          onClick={handleAddSkill}
+          disabled={!skill.trim() || skill.length > 15}
+          sx={addSkillButtonStyle}
+        >
+          + Add
         </Button>
       </Stack>
     );
@@ -104,10 +111,9 @@ export default function EditProfile() {
                   Save
                 </Button>
               </Stack>
-            </Box>
-
-            <Stack direction="row">
-              <Stack spacing={2}>
+            </Box >
+            <Grid sx={infoSectionStyles}>
+              <Grid item xs={12} sm={12} md={4} justifyContent="flex-start" >
                 {menuButtons.map((button, index) => (
                   <MenuItem
                     key={index}
@@ -117,8 +123,8 @@ export default function EditProfile() {
                     <Typography sx={textStyle}>{button.text}</Typography>
                   </MenuItem>
                 ))}
-              </Stack>
-              <Stack spacing={2}>
+              </Grid>
+              <Grid item xs={12} sm={12} md={8} justifyContent="flex-start">
                 <Box id="general" sx={frameStyle}>
                   <Typography sx={titleStyle}>General Information</Typography>
                   <Typography sx={subTitleStyle}>Avatar</Typography>
@@ -141,7 +147,7 @@ export default function EditProfile() {
                       <TextField
                         hiddenLabel
                         id="filled-basic"
-                        variant="filled"
+                        variant="outlined"
                         sx={textInputStyle}
                       />
                     </Stack>
@@ -150,7 +156,7 @@ export default function EditProfile() {
                       <TextField
                         hiddenLabel
                         id="filled-basic"
-                        variant="filled"
+                        variant="outlined"
                         sx={textInputStyle}
                       />
                     </Stack>
@@ -159,13 +165,27 @@ export default function EditProfile() {
                     <Typography sx={subTitleStyle}>
                       Professional Skills
                     </Typography>
-                    <Stack direction="row"
-                    spacing={4}
-                    justifyContent="flex-start">
+                    <Stack
+                      direction="row"
+                      spacing={2}
+                      justifyContent="flex-start"
+                    >
                       {skills.map((skill, index) => (
-                        <Box key={index} sx={skillBoxStyle}>{skill} <Button variant="text" size="small" onClick={() => handleDeleteSkill(skill)} sx={deleteSkillButtonStyle}>X</Button></Box>
+                        <Box key={index} sx={skillBoxStyle}>
+                          {skill}{" "}
+                          <Button
+                            variant="text"
+                            size="small"
+                            onClick={() => handleDeleteSkill(skill)}
+                            sx={deleteSkillButtonStyle}
+                          >
+                            X
+                          </Button>
+                        </Box>
                       ))}
-                      {skills.length<5 && <AddSkillsForm onAdd={handleAddSkill} />}
+                      {skills.length < 5 && (
+                        <AddSkillsForm onAdd={handleAddSkill} />
+                      )}
                     </Stack>
                   </Stack>
                   <Stack>
@@ -183,8 +203,8 @@ export default function EditProfile() {
                   <Typography sx={titleStyle}>About</Typography>
                   {/* Add details content for "About" here */}
                 </div>
-              </Stack>
-            </Stack>
+              </Grid>
+            </Grid>
           </Box>
         </Box>
       </form>

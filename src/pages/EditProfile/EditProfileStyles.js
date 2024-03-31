@@ -24,6 +24,16 @@ export const mainSectionStyles = {
   // marginRight: "10%",
 };
 
+export const infoSectionStyles = {
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "flex-start",
+  width: "100%",
+  paddingBottom: "3rem",
+  // marginLeft: "10%",
+  // marginRight: "10%",
+};
+
 export const arrowStyle = {
   color: "info.main",
 };
@@ -75,10 +85,10 @@ export const subTitleStyle = {
 };
 
 export const frameStyle = {
-  width: "100vh",
+  width: "100%",
   height: "auto",
   padding: "1rem",
-  border: `1px solid`,
+  border: "1px solid",
   borderColor: "primary.dark",
 };
 
@@ -120,20 +130,25 @@ export const imageBoxStyle = {
 
 export const textInputStyle = {
   width: "20rem",
+  backgroundColor: "primary.dark",
   ["& fieldset"]: {
-    borderRadius: 4,
-    borderColor: "secondary.main",
+    borderRadius: 1,
+    border:"none"
   },
   "& input": {
     textAlign: "left",
     fontSize: 16,
     height: "0.4rem",
   },
-
   pt: 1,
+  "&.MuiFilledInput-root": {
+      outline: 0,
+  },
+  
 };
 
 export const skillBoxStyle = {
+  display: "inline-flex",
   borderRadius:"5px",
   backgroundColor: "secondary.main",
   color: "primary.main",
@@ -145,8 +160,46 @@ export const skillBoxStyle = {
     outline: "none",
   },
   height: "2.3rem",
+  minWidth: "fit-content",
+  alignItems:"center",
+  pl:"1rem",
+  pr:"1rem",
 };
 
 export const deleteSkillButtonStyle = {
-  marginLeft: "8px",
+  display: "inline-flex",
+  minWidth: "fit-content",
+  marginLeft:"0.5rem"
+};
+
+export const skillAddTextInputStyle = {
+  width: "10rem",
+  ["& fieldset"]: {
+    borderRadius: 2,
+    borderColor: "secondary.main",
+  },
+  "& input": {
+    textAlign: "left",
+    alignItems:"center",
+    fontSize: 16,
+    height: "0.3rem",
+  },
+  "& label": {
+    textAlign: "left",
+    alignItems:"center",
+    mt:"-0.5rem"
+  },
+}
+
+export const addSkillButtonStyle = {
+  color: "secondary.main",
+  textTransform: "none",
+  "&:hover": {
+    borderColor: "info.main",
+    backgroundColor: "primary.dark",
+  },
+  borderColor: "info.main",
+  "&.Mui-disabled": {
+    color: "secondary.main",
+  },
 };
